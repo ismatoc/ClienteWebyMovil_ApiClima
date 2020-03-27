@@ -1,0 +1,39 @@
+
+ <br><br>
+ <div class="container p-8">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card card-body">
+        <h1 style="text-align: center;">Consulta del Clima</h1>
+        <img width="350" class="mx-auto" style="align-items: center;" src="https://www.periodicodigitalgratis.com/gratis/imagen/7388_20171107021101.png" alt="">
+        <p>Ingresa el Pais que deseas consultar el Clima.</p>
+        <form (submit)="submitLocation(pais)">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Pais" #pais>
+          </div>
+          <button style="text-align: center;" class="btn btn-success btn-block mt-2">
+            Consultar Clima
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="clima" class="card card-body">
+        <h1 style="text-align: center;">{{clima.request.query}}</h1>
+        <p>Temperatura: {{clima.current.temperature}}</p>
+        <p>Latitud: {{clima.location.lat}}</p>
+        <p>Longitud: {{clima.location.lon}}</p>
+        <p>Humedad: {{clima.current.humidity}}</p>
+        <p>Presion: {{clima.current.pressure}}</p>
+        <p>Descripcion: {{clima.current.weather_descriptions}}</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
